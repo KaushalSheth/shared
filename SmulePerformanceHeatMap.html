@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--
+  ~ AQUAFOLD CONFIDENTIAL
+  ~ Unpublished Copyright (c) 2002-2015 AquaFold Incorporated, All Rights Reserved.
+  ~
+  ~ NOTICE:  All information contained herein is, and remains the property of AquaFold Incorporated.  The intellectual
+  ~ and technical concepts contained herein are proprietary to AquaFold Incorporated and may be covered by U.S.
+  ~ and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination of this
+  ~ information or reproduction of this material is strictly forbidden unless prior written permission is obtained from
+  ~ AquaFold Incorporated.
+  ~
+  ~ The copyright notice above does not evidence any actual or intended publication or disclosure of this source code,
+  ~ which includes  information that is confidential and/or proprietary, and is a trade secret, of AquaFold Incorporated.
+  ~ ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE, OR PUBLIC DISPLAY OF OR
+  ~ THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF COMPANY IS
+  ~ STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE LAWS AND INTERNATIONAL TREATIES.  THE
+  ~ RECEIPT OR POSSESSION OF THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR
+  ~ IMPLY ANY RIGHTS TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE,
+  ~ OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+  -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Visual Analytics - [PerformanceHeatMap.vizw] - All Sheets (6)</title>
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <style type="text/css">
+
+        img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #333333;
+  background-color: #ffffff;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+a.setSelected{
+  color: #9d261d;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: none;
+  background-color: transparent;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 8px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+.nav {
+  margin-left: 0;
+  margin-bottom: 16px;
+  list-style: none;
+}
+.nav > li > a {
+  display: block;
+  width:150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav > li > a:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.nav > .pull-right {
+  float: right;
+}
+.nav .nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 16px;
+  color: #999999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+.nav li + .nav-header {
+  margin-top: 9px;
+}
+.nav-list {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0;
+}
+.nav-list > li > a,
+.nav-list .nav-header {
+  margin-left: -15px;
+  margin-right: -15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.nav-list > li > a {
+  padding: 3px 15px;
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #1155cc;
+}
+.nav-list [class^="icon-"] {
+  margin-right: 2px;
+}
+.nav-list .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 7px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+.nav-tabs,
+.nav-pills {
+  *zoom: 1;
+}
+.nav-tabs:before,
+.nav-pills:before,
+.nav-tabs:after,
+.nav-pills:after {
+  display: table;
+  content: "";
+}
+.nav-tabs:after,
+.nav-pills:after {
+  clear: both;
+}
+.nav-tabs > li,
+.nav-pills > li {
+  float: left;
+}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs > li {
+  margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 16px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > li > a:hover {
+  border-color: #f5f5f5 #f5f5f5 #dddddd;
+}
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.nav-pills > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: #ffffff;
+  background-color: #1155cc;
+}
+.nav-stacked > li {
+  float: none;
+}
+.nav-stacked > li > a {
+  margin-right: 0;
+}
+.nav-tabs.nav-stacked {
+  border-bottom: 0;
+}
+.nav-tabs.nav-stacked > li > a {
+  border: 1px solid #ddd;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.nav-tabs.nav-stacked > li:first-child > a {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs.nav-stacked > li:last-child > a {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+.nav-tabs.nav-stacked > li > a:hover {
+  border-color: #ddd;
+  z-index: 2;
+}
+.nav-pills.nav-stacked > li > a {
+  margin-bottom: 3px;
+}
+.nav-pills.nav-stacked > li:last-child > a {
+  margin-bottom: 1px;
+}
+.nav-tabs .dropdown-menu {
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+.nav-pills .dropdown-menu {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.nav-tabs .dropdown-toggle .caret,
+.nav-pills .dropdown-toggle .caret {
+  border-top-color: #1155cc;
+  border-bottom-color: #1155cc;
+  margin-top: 6px;
+}
+.nav-tabs .dropdown-toggle:hover .caret,
+.nav-pills .dropdown-toggle:hover .caret {
+  border-top-color: #1155cc;
+  border-bottom-color: #1155cc;
+}
+.nav-tabs .active .dropdown-toggle .caret,
+.nav-pills .active .dropdown-toggle .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+.nav > .dropdown.active > a:hover {
+  color: #000000;
+  cursor: pointer;
+}
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #999999;
+}
+.nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.tabs-stacked .open > a:hover {
+  border-color: #999999;
+}
+
+        body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        height: 100%;
+        max-height: 100%;
+        }
+
+        #framecontent {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 200px; /*Width of frame div*/
+        height: 100%;
+        overflow: auto; /*Disable scrollbars. Set to "scroll" to enable*/
+        color: white;
+        }
+
+        #maincontent {
+        position: fixed;
+        top: 0;
+        left: 200px; /*Set left value to WidthOfFrameDiv*/
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        background: #fff;
+        }
+
+        .innertube {
+        margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+        }
+
+        * html body {
+        /*IE6 hack*/
+        padding: 0 0 0 200px; /*Set value to (0 0 0 WidthOfFrameDiv)*/
+        }
+
+        * html #maincontent {
+        /*IE6 hack*/
+        height: 100%;
+        width: 100%;
+        }
+    </style>
+    <script>
+    function init() {
+    var body = document.body, html = document.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight );
+    document.getElementById("content_frame").style.height = String(height * 0.9) +"px";
+    }
+
+    function markSelected(obj) {
+        var x = document.getElementById("framecontent");
+        var y = x.getElementsByTagName("a");
+        var i;
+        for (i = 0; i < y.length; i++) {
+            y[i].className = "";
+        }
+        obj.className = "setSelected";
+    }
+
+    function markSelectedInitial() {
+        var x = document.getElementById("framecontent");
+        x.getElementsByTagName("a")[0].className = "setSelected";
+        document.getElementById("content_frame").contentWindow.document.location.href = x.getElementsByTagName("a")[0].href;
+    }
+
+    </script>
+</head>
+<body onload="init(); markSelectedInitial()" onresize="init()">
+<div id="framecontent">
+    <div class="innertube">
+        <ul class="nav nav-list">
+            <li class="nav-header">
+                All Sheets (6)
+            </li>
+            <li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Title - 90 days.html" onclick="markSelected(this)" target="content_frame" title="Title - 90 days"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Title - 90 days</a>
+            </li>
+<li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Partner - 90 days.html" onclick="markSelected(this)" target="content_frame" title="Partner - 90 days"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Partner - 90 days</a>
+            </li>
+<li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Title - 30 days.html" onclick="markSelected(this)" target="content_frame" title="Title - 30 days"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Title - 30 days</a>
+            </li>
+<li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Partner - 30 days.html" onclick="markSelected(this)" target="content_frame" title="Partner - 30 days"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Partner - 30 days</a>
+            </li>
+<li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Title - all-time.html" onclick="markSelected(this)" target="content_frame" title="Title - all-time"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Title - all-time</a>
+            </li>
+<li>
+                <a href="./SmulePerformanceHeatMap_files/sheets/Partner - all-time.html" onclick="markSelected(this)" target="content_frame" title="Partner - all-time"><img src="./SmulePerformanceHeatMap_files/icons/scatter_render.png" title="Shape"/> &nbsp; Partner - all-time</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div id="maincontent">
+    <div class="innertube">
+        <iframe id="content_frame" name="content_frame" src="./SmulePerformanceHeatMap_files/sheets/Title - 90 days.html" style="width: 100%;border: none"></iframe>
+    </div>
+</div>
+</div>
+</body>
+</html>
