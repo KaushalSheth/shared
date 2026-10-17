@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
+    crossorigin=""></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smule Analytics</title>
+    <link rel="stylesheet" href="/static/bulma.min.css">
+    <link rel="stylesheet" href="/static/highlight.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.0/css/fixedHeader.dataTables.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="../static/utils.js"></script>
+	<script type=text/javascript>
+		$(document).ready(function() {
+            var table = $('#mytable').DataTable( {
+                "responsive": true,
+                "pging": false,
+                "lengthMenu": [[50, 100, 150, 200, -1], [50, 100, 150, 200, "All"]],
+                "order": [[6,"desc"],[4,"desc"],[3,"desc"]]
+                } );
+            new $.fn.dataTable.FixedHeader( table );
+        } );
+	</script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">Home</a>
+          <div class="navbar-burger" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="/utilities">Utilities</a>
+          </div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="/analytics">Analytics</a>
+          </div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="/search">Search</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+
+
+  <br><br>
+  <table style="width:100%">
+      <tbody>
+          <tr>
+              <td>Solos Analytics as of 10/16/2026 18:09:52</td>
+          </tr>
+      </tbody>
+  </table>
+  <br><table id="mytable" class="display" style="width:100%">
+    <thead><tr bgcolor="DarkGray"><th>Song Name</th><th>Singer Type</th><th>Adjusted Weight</th><th>Rating</th><th>Recent Solo</th><th>Last Solo Time</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Qayde Se</td><td>male</td><td>413.50</td><td>10</td><td>1</td><td>2026-07-21 17:23:46</td>
+        </tr>
+        <tr><td>Yeh Raatein Yeh Mausam</td><td>duet</td><td>362.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lag Ja Gale</td><td>female</td><td>361.00</td><td>10</td><td>1</td><td>2025-06-21 08:11:40</td>
+        </tr>
+        <tr><td>Ghodey Pe Sawaar</td><td>female</td><td>337.00</td><td>10</td><td>1</td><td>2026-03-26 16:05:49</td>
+        </tr>
+        <tr><td>Kaun Tujhe</td><td>female</td><td>326.00</td><td>10</td><td>1</td><td>2026-06-10 15:06:38</td>
+        </tr>
+        <tr><td>Pal Pal Dil Ke Paas</td><td>male</td><td>318.00</td><td>9</td><td>1</td><td>2026-06-10 15:25:30</td>
+        </tr>
+        <tr><td>Pardesiya Param Sundari</td><td>duet</td><td>303.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ehsaan Tera Hoga Mujh Par</td><td>male</td><td>297.00</td><td>10</td><td>1</td><td>2026-06-10 15:11:26</td>
+        </tr>
+        <tr><td>Pehla Nasha</td><td>duet</td><td>292.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rimjhim Rimjhim</td><td>duet</td><td>292.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Manike Thank God</td><td>duet</td><td>292.00</td><td>10</td><td>1</td><td>2026-10-11 15:27:56</td>
+        </tr>
+        <tr><td>Ek Pyaar Ka Nagma Hain</td><td>duet</td><td>290.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tauba Tumhare Yeh Ishare</td><td>duet</td><td>287.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Ki Aankhon Mein Kuch</td><td>duet</td><td>287.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Na Tum Humein Jaano</td><td>male</td><td>282.00</td><td>10</td><td>1</td><td>2026-06-19 16:20:05</td>
+        </tr>
+        <tr><td>Ae Mere Humsafar</td><td>duet</td><td>281.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rimjhim Gire Saawan</td><td>duet</td><td>278.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bheegi Bheegi Raaton Mein</td><td>duet</td><td>275.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kabhi Kabhi Mere Dil Mein</td><td>male</td><td>268.00</td><td>10</td><td>1</td><td>2026-06-10 15:18:47</td>
+        </tr>
+        <tr><td>Dil Hai Ke Maanta Nahin</td><td>duet</td><td>265.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baahon Ke Darmiyaan</td><td>duet</td><td>263.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Suraj Hua Maddham</td><td>duet</td><td>262.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaadu Hai Nasha Hai</td><td>female</td><td>253.50</td><td>10</td><td>1</td><td>2026-06-19 16:26:33</td>
+        </tr>
+        <tr><td>Ajeeb Dastaan Hai Yeh</td><td>female</td><td>251.75</td><td>10</td><td>1</td><td>2026-02-21 17:19:59</td>
+        </tr>
+        <tr><td>Aankhon Ki Gustakhiyan</td><td>duet</td><td>250.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Liye</td><td>duet</td><td>249.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Do Dil Mil Rahe Hai</td><td>male</td><td>247.00</td><td>10</td><td>1</td><td>2026-06-19 16:39:43</td>
+        </tr>
+        <tr><td>Chori Chori Jab Nazrein Mili</td><td>duet</td><td>242.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Bina Zindagi Se Koi</td><td>duet</td><td>242.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Do Pal Ruka</td><td>duet</td><td>240.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Kya Kare</td><td>duet</td><td>240.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhookar Mere Man Ko</td><td>male</td><td>240.00</td><td>9</td><td>1</td><td>2026-06-25 17:18:00</td>
+        </tr>
+        <tr><td>Abhi Na Jao Chhod Kar</td><td>duet</td><td>239.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ki Nazar Se</td><td>duet</td><td>238.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hoshwalon Ko Khabar Kya</td><td>male</td><td>238.00</td><td>10</td><td>1</td><td>2026-06-19 16:33:06</td>
+        </tr>
+        <tr><td>Jugraafiya</td><td>duet</td><td>238.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Radha Kaise Na Jale</td><td>duet</td><td>236.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Mile Dil Khile</td><td>duet</td><td>235.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Deewana Hua Baadal</td><td>duet</td><td>233.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Woh Hai Zara Khafa Khafa</td><td>duet</td><td>231.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saanson Ko Saanson Mein</td><td>duet</td><td>227.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Dil Tum Bin</td><td>duet</td><td>227.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saagar Kinare</td><td>duet</td><td>225.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raat Ke Humsafar</td><td>duet</td><td>224.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chura Ke Dil Mera</td><td>duet</td><td>223.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rahein Na Rahein Hum</td><td>duet</td><td>223.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Hi Re</td><td>duet</td><td>221.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Beqarar Karke Hamein</td><td>male</td><td>221.50</td><td>10</td><td>1</td><td>2026-05-13 14:02:57</td>
+        </tr>
+        <tr><td>Jab Koi Baat Bigad Jaaye</td><td>duet</td><td>221.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zara Zara Bahekta Hai</td><td>female</td><td>221.00</td><td>10</td><td>1</td><td>2026-06-25 17:13:18</td>
+        </tr>
+        <tr><td>Yeh Shaam Mastaani</td><td>male</td><td>220.00</td><td>10</td><td>1</td><td>2026-06-25 17:24:37</td>
+        </tr>
+        <tr><td>Zehenaseeb</td><td>duet</td><td>220.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Tu Hai Wahi</td><td>duet</td><td>219.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tip Tip Barsa Paani</td><td>duet</td><td>219.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Mehboob Qayamat Hogi</td><td>male</td><td>219.00</td><td>10</td><td>1</td><td>2025-07-20 09:21:48</td>
+        </tr>
+        <tr><td>Soch Na Sake</td><td>duet</td><td>218.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bheegi Saree</td><td>duet</td><td>218.00</td><td>10</td><td>1</td><td>2025-09-04 13:54:55</td>
+        </tr>
+        <tr><td>Khairiyat</td><td>male</td><td>217.75</td><td>9</td><td>1</td><td>2026-06-17 15:05:35</td>
+        </tr>
+        <tr><td>Tum Hi Ho</td><td>duet</td><td>217.00</td><td>10</td><td>1</td><td>2026-03-17 15:40:34</td>
+        </tr>
+        <tr><td>Haal Kaisa Hai Janaab Ka</td><td>duet</td><td>217.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Haseen Wadiyan</td><td>duet</td><td>217.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Moh Moh Ke Dhaage</td><td>duet</td><td>215.00</td><td>10</td><td>1</td><td>2024-09-15 09:12:51</td>
+        </tr>
+        <tr><td>Dil Ne Yeh Kaha</td><td>duet</td><td>215.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raat Kali</td><td>female</td><td>214.00</td><td>10</td><td>1</td><td>2026-02-08 17:51:47</td>
+        </tr>
+        <tr><td>Gazab Ka Hai Din</td><td>duet</td><td>211.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Waada Karo Nahi Chhodoge</td><td>duet</td><td>210.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Roop Tera Mastana</td><td>male</td><td>205.50</td><td>10</td><td>1</td><td>2026-01-27 16:15:55</td>
+        </tr>
+        <tr><td>Qaafirana</td><td>duet</td><td>205.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Bindiya Re</td><td>duet</td><td>204.00</td><td>9</td><td>1</td><td>2026-01-23 17:15:04</td>
+        </tr>
+        <tr><td>Aake Teri Baahon Mein</td><td>duet</td><td>203.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Hi Aana</td><td>duet</td><td>200.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaahun Main Ya Na</td><td>duet</td><td>199.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dekha Hazaro Dafaa</td><td>duet</td><td>199.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Itna Na Mujhse Tu Pyar Badha</td><td>duet</td><td>198.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Paas Aaye</td><td>duet</td><td>197.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gunguna Rahe Hain Bhanwre</td><td>duet</td><td>197.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Akele Hain To Kya Gam Hai</td><td>duet</td><td>197.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gehra Hua</td><td>male</td><td>196.75</td><td>10</td><td>1</td><td>2026-01-25 17:57:59</td>
+        </tr>
+        <tr><td>Kalank Title</td><td>male</td><td>196.50</td><td>10</td><td>1</td><td>2026-07-23 16:23:16</td>
+        </tr>
+        <tr><td>Pardesiya Ye Sach Hai Piya</td><td>duet</td><td>195.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Humein Tumse Pyaar Kitna</td><td>duet</td><td>194.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaj Kal Tere Mere Pyaar Ke Charche</td><td>duet</td><td>194.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Pukar Lo</td><td>male</td><td>193.00</td><td>10</td><td>1</td><td>2026-05-06 15:19:18</td>
+        </tr>
+        <tr><td>Zara Sa Jhoom Loon Main</td><td>duet</td><td>192.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Tenu Samjhawan</td><td>duet</td><td>189.00</td><td>9</td><td>1</td><td>2026-07-02 16:22:30</td>
+        </tr>
+        <tr><td>Bahut Pyaar Karte Hai</td><td>female</td><td>188.00</td><td>9</td><td>1</td><td>2026-08-07 14:30:29</td>
+        </tr>
+        <tr><td>Gum Hai Kisi Ke Pyaar Mein</td><td>duet</td><td>186.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yaad Kiya Dil Ne</td><td>duet</td><td>184.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Piyu Bole</td><td>duet</td><td>184.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Inteha Ho Gayi</td><td>duet</td><td>184.00</td><td>10</td><td>1</td><td>2024-09-20 14:47:16</td>
+        </tr>
+        <tr><td>Neele Neele Ambar Par</td><td>male</td><td>184.00</td><td>10</td><td>1</td><td>2026-06-25 18:03:08</td>
+        </tr>
+        <tr><td>Jaan Nisaar</td><td>male</td><td>183.75</td><td>10</td><td>1</td><td>2026-07-22 15:26:24</td>
+        </tr>
+        <tr><td>Aa Bhi Jaa</td><td>male</td><td>183.50</td><td>10</td><td>1</td><td>2025-05-02 08:03:44</td>
+        </tr>
+        <tr><td>Tere Mere Milan Ki Ye Raina</td><td>duet</td><td>182.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pukarta Chala Hoon Main</td><td>male</td><td>182.00</td><td>10</td><td>1</td><td>2025-06-19 10:04:35</td>
+        </tr>
+        <tr><td>Dheere Dheere Se</td><td>duet</td><td>181.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Honthon Se Chhu Lo Tum</td><td>male</td><td>181.50</td><td>10</td><td>1</td><td>2026-02-07 16:22:45</td>
+        </tr>
+        <tr><td>Phero Na Najariya</td><td>female</td><td>181.25</td><td>10</td><td>1</td><td>2026-05-22 15:57:59</td>
+        </tr>
+        <tr><td>Ek Ajnabi Haseena Se</td><td>male</td><td>181.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Isharon Isharon Mein</td><td>duet</td><td>179.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kora Kaagaz</td><td>duet</td><td>177.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Hansini</td><td>male</td><td>177.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Phoolon Ke Rang Se</td><td>male</td><td>175.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tumhi Dekho Na</td><td>duet</td><td>175.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Dil Ki Dhadkan Mein</td><td>duet</td><td>175.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Roz Roz Aankhon Tale</td><td>duet</td><td>174.00</td><td>10</td><td>1</td><td>2025-01-10 07:54:51</td>
+        </tr>
+        <tr><td>Kahin Door Jab Din Dhal Jaaye</td><td>male</td><td>173.00</td><td>9</td><td>1</td><td>2026-03-17 15:33:34</td>
+        </tr>
+        <tr><td>Tum Se Hi</td><td>male</td><td>172.00</td><td>10</td><td>1</td><td>2025-03-15 08:22:45</td>
+        </tr>
+        <tr><td>Mujhko Apne Gale Laga Lo</td><td>female</td><td>172.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Haaye Rama Ye Kya Hua</td><td>duet</td><td>171.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Sanam Madhur Chandni Mein</td><td>duet</td><td>170.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Nayan Dare Dare</td><td>male</td><td>169.00</td><td>10</td><td>1</td><td>2025-11-14 14:16:50</td>
+        </tr>
+        <tr><td>Mere Haath Mein</td><td>duet</td><td>168.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaaneman Jaaneman Tere Do Nayan</td><td>duet</td><td>168.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dhadak Title</td><td>duet</td><td>167.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ghar Se Nikalte Hi</td><td>male</td><td>167.00</td><td>9</td><td>1</td><td>2026-07-23 16:39:05</td>
+        </tr>
+        <tr><td>Acchha Ji Main Haari</td><td>duet</td><td>166.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Ki Nazron Ne Samjha</td><td>female</td><td>166.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baahon Mein Chale Aao</td><td>female</td><td>166.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>May It Be</td><td>female</td><td>165.75</td><td>10</td><td>1</td><td>2026-02-10 18:11:05</td>
+        </tr>
+        <tr><td>Saawan Barse Tarse Dil</td><td>duet</td><td>165.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tujh Mein Rab Dikhta Hai</td><td>male</td><td>165.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jeevan Se Bhari Teri Aankhein</td><td>male</td><td>164.25</td><td>9</td><td>1</td><td>2026-03-22 14:26:21</td>
+        </tr>
+        <tr><td>Pyaar Mein Hota Hai Kya Jaadu</td><td>duet</td><td>164.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Kaisi Hai Paheli</td><td>male</td><td>163.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Duniya Bhula Doonga</td><td>duet</td><td>162.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kal Ho Na Ho</td><td>male</td><td>162.75</td><td>9</td><td>1</td><td>2026-07-03 16:51:46</td>
+        </tr>
+        <tr><td>Chingari Koi Bhadke</td><td>male</td><td>162.00</td><td>10</td><td>1</td><td>2025-07-26 06:52:34</td>
+        </tr>
+        <tr><td>Madhosh Dil Ki Dhadkan</td><td>duet</td><td>161.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pal Pal Pal Pal Har Pal</td><td>duet</td><td>159.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>My Heart Will Go On</td><td>female</td><td>158.00</td><td>10</td><td>1</td><td>2026-05-02 17:58:37</td>
+        </tr>
+        <tr><td>Mere Naina Saawan Bhaadon</td><td>male</td><td>158.00</td><td>10</td><td>1</td><td>2026-05-06 15:30:13</td>
+        </tr>
+        <tr><td>Aisi Deewanagi</td><td>duet</td><td>157.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Paayalein Chunmun</td><td>duet</td><td>157.00</td><td>10</td><td>1</td><td>2025-01-24 07:50:28</td>
+        </tr>
+        <tr><td>Diye Jalte Hain</td><td>male</td><td>156.00</td><td>10</td><td>1</td><td>2024-11-29 10:11:09</td>
+        </tr>
+        <tr><td>Yeh Raat Yeh Chandni Phir Kahan</td><td>duet</td><td>156.00</td><td>10</td><td>1</td><td>2025-01-19 09:50:26</td>
+        </tr>
+        <tr><td>Ae Ajnabi</td><td>duet</td><td>153.75</td><td>10</td><td>1</td><td>2026-02-08 16:41:09</td>
+        </tr>
+        <tr><td>Jhuki Jhuki Si Nazar</td><td>male</td><td>153.00</td><td>9</td><td>1</td><td>2026-02-12 18:26:29</td>
+        </tr>
+        <tr><td>Chura Lo Na Dil Mera Sanam</td><td>duet</td><td>153.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aawaaz Do Humko</td><td>duet</td><td>153.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aise Na Mujhe Tum Dekho</td><td>male</td><td>152.75</td><td>10</td><td>1</td><td>2024-12-27 16:53:57</td>
+        </tr>
+        <tr><td>Yeh Ladka Haaye Allah</td><td>duet</td><td>152.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kisi Ki Muskarahaton</td><td>male</td><td>152.00</td><td>10</td><td>1</td><td>2026-07-04 15:45:20</td>
+        </tr>
+        <tr><td>Sun Sun Sun Sun Zaalima</td><td>duet</td><td>151.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaane Jaan Dhoondta</td><td>duet</td><td>150.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aur Kya</td><td>duet</td><td>150.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Surmaiye Ankhiyon Mein</td><td>male</td><td>150.00</td><td>10</td><td>1</td><td>2026-07-04 15:51:28</td>
+        </tr>
+        <tr><td>O Saathi Re</td><td>female</td><td>149.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Agar Kahoon</td><td>duet</td><td>149.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Na Kajre Ki Dhaar</td><td>duet</td><td>148.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Aa Gaye Ho</td><td>male</td><td>147.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Babuji Dheere Chalna</td><td>female</td><td>146.75</td><td>10</td><td>1</td><td>2024-09-08 08:41:48</td>
+        </tr>
+        <tr><td>Balam Pichkari</td><td>duet</td><td>146.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Bin Wazir</td><td>duet</td><td>146.00</td><td>10</td><td>1</td><td>2024-12-13 07:51:15</td>
+        </tr>
+        <tr><td>Saiyaara</td><td>male</td><td>144.50</td><td>10</td><td>1</td><td>2025-08-14 16:14:12</td>
+        </tr>
+        <tr><td>O Haseena Zulfon Wali</td><td>duet</td><td>143.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hai Apna Dil To Awaara</td><td>male</td><td>142.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhod Do Aanchal</td><td>duet</td><td>141.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Nazm Nazm</td><td>male</td><td>141.50</td><td>9</td><td>1</td><td>2026-03-27 16:42:57</td>
+        </tr>
+        <tr><td>Tera Chehra</td><td>male</td><td>141.00</td><td>10</td><td>1</td><td>2026-07-23 16:31:48</td>
+        </tr>
+        <tr><td>Jo Wada Kiya Woh</td><td>duet</td><td>140.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Taal Se Taal Mila</td><td>duet</td><td>139.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aji Roothkar</td><td>female</td><td>139.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Suhani Raat Dhal Chuki</td><td>male</td><td>139.00</td><td>10</td><td>1</td><td>2026-03-20 16:41:53</td>
+        </tr>
+        <tr><td>Jalta Hai Jiya Mera</td><td>duet</td><td>138.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaiye Meherbaan</td><td>female</td><td>137.00</td><td>10</td><td>1</td><td>2026-08-23 14:39:42</td>
+        </tr>
+        <tr><td>Lekar Hum Deewana Dil</td><td>duet</td><td>137.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Do Lafzon Ki Hai</td><td>female</td><td>136.00</td><td>9</td><td>1</td><td>2026-09-06 16:08:35</td>
+        </tr>
+        <tr><td>Kaun Hai Jo Sapno Mein Aaya</td><td>male</td><td>136.00</td><td>10</td><td>1</td><td>2026-05-05 15:58:43</td>
+        </tr>
+        <tr><td>Chaand Chhupaa Baadal Mein</td><td>duet</td><td>134.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hawa Ke Saath Saath</td><td>male</td><td>134.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aisa Lagta Hai</td><td>duet</td><td>133.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bairi Piya</td><td>duet</td><td>132.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saawan Ka Mahina</td><td>female</td><td>131.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jabse Tere Naina</td><td>female</td><td>131.00</td><td>10</td><td>1</td><td>2026-07-03 17:07:49</td>
+        </tr>
+        <tr><td>Jaane Kaha Mera Jigar Gaya Ji</td><td>duet</td><td>131.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Jaate Huye Lamhon</td><td>male</td><td>130.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Shauq</td><td>duet</td><td>130.50</td><td>10</td><td>1</td><td>2025-08-18 15:47:36</td>
+        </tr>
+        <tr><td>Raat Ka Nasha</td><td>duet</td><td>129.00</td><td>10</td><td>1</td><td>2024-12-20 08:00:41</td>
+        </tr>
+        <tr><td>Jaane Kya Tune Kahi</td><td>female</td><td>129.00</td><td>10</td><td>1</td><td>2026-05-27 14:01:32</td>
+        </tr>
+        <tr><td>Aao Na</td><td>duet</td><td>128.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Khwabon Mein Tu</td><td>duet</td><td>128.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gali Mein Aaj Chand Nikla</td><td>female</td><td>128.00</td><td>10</td><td>1</td><td>2024-11-16 08:22:51</td>
+        </tr>
+        <tr><td>Ab Mujhe Raat Din</td><td>male</td><td>127.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aati Kya Khandala</td><td>duet</td><td>127.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Roshni Se</td><td>duet</td><td>126.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sapna Jahan</td><td>duet</td><td>126.00</td><td>10</td><td>1</td><td>2025-02-24 06:56:30</td>
+        </tr>
+        <tr><td>Jhilmil Sitaron Ka</td><td>duet</td><td>125.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Mere Hothon Pe</td><td>duet</td><td>125.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Tadap Tadap Ke</td><td>duet</td><td>124.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Is Tarah</td><td>male</td><td>124.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lamha Lamha</td><td>duet</td><td>124.00</td><td>10</td><td>1</td><td>2026-03-06 16:28:26</td>
+        </tr>
+        <tr><td>Main Yahan Hoon</td><td>female</td><td>123.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kajra Mohabbat Wala</td><td>duet</td><td>123.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhoo Lene Do Nazuk Honthon Ko</td><td>male</td><td>123.00</td><td>10</td><td>1</td><td>2026-02-21 17:24:26</td>
+        </tr>
+        <tr><td>Chehra Kya Dekhte Ho</td><td>duet</td><td>123.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Itna Jo Muskura Rahe Ho</td><td>male</td><td>123.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaane Woh Kaise Log The</td><td>male</td><td>122.75</td><td>10</td><td>1</td><td>2026-03-04 14:51:27</td>
+        </tr>
+        <tr><td>Yeh Raat Bheegi Bheegi</td><td>duet</td><td>122.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Koi Fariyaad</td><td>male</td><td>122.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jitni Dafa</td><td>duet</td><td>120.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Hua Iqraar Hua</td><td>duet</td><td>119.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Dil Mujhe Bata De</td><td>female</td><td>119.00</td><td>10</td><td>1</td><td>2025-04-04 07:47:42</td>
+        </tr>
+        <tr><td>Tu Mere Saamne</td><td>duet</td><td>119.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jis Gali Mein Tera Ghar</td><td>male</td><td>119.00</td><td>10</td><td>1</td><td>2026-06-06 15:32:48</td>
+        </tr>
+        <tr><td>Jaane Do Na</td><td>duet</td><td>118.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gaata Rahe Mera Dil</td><td>duet</td><td>118.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maang Ke Saath Tumhara</td><td>duet</td><td>118.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Shokhiyon Mein Ghola Jaye</td><td>duet</td><td>117.75</td><td>10</td><td>1</td><td>2024-12-06 07:34:48</td>
+        </tr>
+        <tr><td>Dil Ka Bhanwar Kare Pukar</td><td>male</td><td>117.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kehna Hi Kya</td><td>female</td><td>116.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tasveer Teri Dil Mein</td><td>duet</td><td>116.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Rahoon Ya Na Rahoon</td><td>male</td><td>115.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sun Mere Humsafar</td><td>duet</td><td>114.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sab Tera</td><td>duet</td><td>113.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Khoya Khoya Chaand</td><td>male</td><td>113.00</td><td>10</td><td>1</td><td>2025-03-08 06:23:39</td>
+        </tr>
+        <tr><td>Mohabbat Ho Na Jaaye</td><td>male</td><td>113.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chupke Se Saathiya</td><td>duet</td><td>113.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maine Dil Se Kaha</td><td>male</td><td>113.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Ke Haseen Rukh</td><td>male</td><td>113.00</td><td>10</td><td>1</td><td>2026-05-31 17:14:24</td>
+        </tr>
+        <tr><td>Ae Dil Hai Mushkil</td><td>male</td><td>112.75</td><td>9</td><td>1</td><td>2024-10-20 08:12:54</td>
+        </tr>
+        <tr><td>Aaj Main Upar</td><td>duet</td><td>112.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Aap Ki Aankhon Mein</td><td>duet</td><td>110.50</td><td>9</td><td>1</td><td>2025-01-17 07:56:18</td>
+        </tr>
+        <tr><td>Dard Karaara</td><td>duet</td><td>110.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Chaand Sa Roshan Chehra</td><td>male</td><td>109.75</td><td>10</td><td>1</td><td>2026-03-08 16:54:32</td>
+        </tr>
+        <tr><td>Hello</td><td>male</td><td>109.50</td><td>10</td><td>1</td><td>2026-05-06 14:36:48</td>
+        </tr>
+        <tr><td>Aaj Rapat Jaayen</td><td>duet</td><td>109.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Rashke Qamar</td><td>male</td><td>109.00</td><td>9</td><td>1</td><td>2026-02-13 17:57:28</td>
+        </tr>
+        <tr><td>Neend Na Mujhko Aaye</td><td>duet</td><td>109.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhup Gaye Saare Nazaare</td><td>duet</td><td>107.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Jeevan Hai</td><td>male</td><td>105.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Khamoshiyaan</td><td>male</td><td>105.50</td><td>10</td><td>1</td><td>2026-07-03 16:43:18</td>
+        </tr>
+        <tr><td>Zoobi Doobi</td><td>duet</td><td>105.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Silsila Ye Chaahat Ka</td><td>female</td><td>105.00</td><td>10</td><td>1</td><td>2026-05-24 16:07:59</td>
+        </tr>
+        <tr><td>Waqt Ne Kiya</td><td>female</td><td>105.00</td><td>10</td><td>1</td><td>2026-07-23 16:44:01</td>
+        </tr>
+        <tr><td>Aadha Hai Chandrama</td><td>duet</td><td>104.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Aankhon Ke Siva</td><td>male</td><td>104.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bhool Gaya Sab Kuch</td><td>duet</td><td>104.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Cant Help Falling In Love</td><td>male</td><td>103.50</td><td>10</td><td>1</td><td>2026-07-26 16:34:29</td>
+        </tr>
+        <tr><td>Yaadein Yaad Aati Hain</td><td>male</td><td>103.00</td><td>10</td><td>1</td><td>2026-08-07 14:37:06</td>
+        </tr>
+        <tr><td>Sun Raha Hai</td><td>female</td><td>103.00</td><td>9</td><td>1</td><td>2026-09-06 16:27:56</td>
+        </tr>
+        <tr><td>Ek Ladki Bheegi Bhaagi Si</td><td>male</td><td>103.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jalte Hai Jiske Liye</td><td>male</td><td>102.25</td><td>10</td><td>1</td><td>2026-01-31 17:03:15</td>
+        </tr>
+        <tr><td>Meri Bheegi Bheegi Si</td><td>male</td><td>102.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raat Akeli Hai</td><td>female</td><td>102.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chalo Ek Baar Phir Se Ajnabi</td><td>male</td><td>101.00</td><td>10</td><td>1</td><td>2026-05-21 17:35:43</td>
+        </tr>
+        <tr><td>Maine Poochha Chand Se</td><td>male</td><td>100.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Adayein Bhi Hai</td><td>duet</td><td>100.75</td><td>10</td><td>1</td><td>2024-10-18 07:52:51</td>
+        </tr>
+        <tr><td>Chhoti Si Asha</td><td>duet</td><td>100.00</td><td>10</td><td>1</td><td>2026-07-26 16:27:27</td>
+        </tr>
+        <tr><td>Mere Sapno Ki Rani</td><td>male</td><td>100.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chanda O Chanda</td><td>female</td><td>100.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Musaafir Hoon Yaaron</td><td>male</td><td>99.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tera Hone Laga Hoon</td><td>duet</td><td>99.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Woh Jab Yaad Aaye</td><td>duet</td><td>99.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aage Bhi Jaane Na Tu</td><td>female</td><td>98.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tears In Heaven</td><td>male</td><td>98.00</td><td>10</td><td>1</td><td>2025-11-14 14:22:43</td>
+        </tr>
+        <tr><td>Chain Se Humko Kabhi</td><td>female</td><td>98.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Maahiya</td><td>duet</td><td>98.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Jo Mohabbat Hai</td><td>male</td><td>97.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Mitti</td><td>male</td><td>97.50</td><td>9</td><td>1</td><td>2025-07-29 15:07:06</td>
+        </tr>
+        <tr><td>O Re Chhori</td><td>duet</td><td>96.00</td><td>10</td><td>1</td><td>2025-05-09 07:35:30</td>
+        </tr>
+        <tr><td>Chaudhvin Ka Chand Ho</td><td>male</td><td>95.50</td><td>10</td><td>1</td><td>2025-04-18 07:09:46</td>
+        </tr>
+        <tr><td>Dhal Gaya Din</td><td>male</td><td>95.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Woh Shaam Kuch Ajeeb Thi</td><td>male</td><td>95.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaand Phir Nikla</td><td>female</td><td>94.00</td><td>10</td><td>1</td><td>2025-01-31 07:18:18</td>
+        </tr>
+        <tr><td>Teri Chunariya</td><td>duet</td><td>94.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Palkon Ke Peeche Se</td><td>duet</td><td>94.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mujhe Jaan Na Kaho Meri Jaan</td><td>female</td><td>93.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhalkaaye Jaam</td><td>male</td><td>93.00</td><td>10</td><td>1</td><td>2026-02-04 17:44:29</td>
+        </tr>
+        <tr><td>Main Rang Sharbaton Ka</td><td>duet</td><td>93.00</td><td>10</td><td>1</td><td>2024-09-27 07:43:17</td>
+        </tr>
+        <tr><td>Khullam Khulla Pyaar</td><td>duet</td><td>92.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Jo Mil Gaye Ho</td><td>male</td><td>92.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saanson Ki Zaroorat Hai Jaise</td><td>male</td><td>92.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Apun Bola</td><td>duet</td><td>92.25</td><td>10</td><td>1</td><td>2024-10-04 07:19:33</td>
+        </tr>
+        <tr><td>Loote Koi Man Ka Nagar</td><td>duet</td><td>91.50</td><td>9</td><td>1</td><td>2025-04-27 08:24:25</td>
+        </tr>
+        <tr><td>Phoolon Ka Taaron Ka</td><td>duet</td><td>90.00</td><td>9</td><td>1</td><td>2026-08-21 14:47:08</td>
+        </tr>
+        <tr><td>Sawaar Loon</td><td>female</td><td>89.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaane Chaman Shola Badan</td><td>duet</td><td>88.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Kaali Kaali Aankhen</td><td>duet</td><td>88.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ude Jab Jab Zulfein Teri</td><td>duet</td><td>88.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gori Gori</td><td>duet</td><td>87.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Din Dhal Jaaye Haaye</td><td>male</td><td>87.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mujhe Chhu Rahi Hai</td><td>duet</td><td>86.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Aaja Main Hoon Pyar Tera</td><td>duet</td><td>86.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Faza Bhi Hai</td><td>female</td><td>86.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chupke Se Sun</td><td>female</td><td>85.00</td><td>10</td><td>1</td><td>2025-03-21 08:28:37</td>
+        </tr>
+        <tr><td>Dum Bhar Jo Udhar</td><td>duet</td><td>85.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tumko Dekha To</td><td>duet</td><td>84.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chandan Sa Badan</td><td>male</td><td>84.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saree Ke Fall Sa</td><td>duet</td><td>83.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaj Ki Raat Stree 2</td><td>duet</td><td>83.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jahaan Main Jaati Hoon</td><td>duet</td><td>83.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dilbar Mere Kab Tak Mujhe</td><td>duet</td><td>83.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maana Ho Tum Behad Haseen</td><td>duet</td><td>83.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hangover</td><td>duet</td><td>83.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Kahin Kavi Na Ban Jaaoon</td><td>male</td><td>83.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raah Mein Unse Mulaqat Ho Gayi</td><td>duet</td><td>82.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aur Aahista</td><td>duet</td><td>82.00</td><td>10</td><td>1</td><td>2024-10-11 08:30:43</td>
+        </tr>
+        <tr><td>Tum Bhi Chalo Hum Bhi Chalein</td><td>male</td><td>81.00</td><td>9</td><td>1</td><td>2026-09-08 17:05:32</td>
+        </tr>
+        <tr><td>Badan Pe Sitare Lapate Hue</td><td>male</td><td>81.00</td><td>10</td><td>1</td><td>2024-10-02 08:25:18</td>
+        </tr>
+        <tr><td>Maana Janab Ne Pukara Nahi</td><td>male</td><td>80.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Jab Bhi Teri Bazm Mein</td><td>male</td><td>80.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yunhi Tum Mujhse Baat</td><td>duet</td><td>80.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saara Pyaar Tumhara</td><td>duet</td><td>80.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Shola Jo Bhadke</td><td>duet</td><td>80.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhup Gaya Badli Mein</td><td>duet</td><td>79.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Akele Hai Chale Aao</td><td>female</td><td>79.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Na Jaane Kyu Hota Hai</td><td>female</td><td>79.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Is Pyaar Se Meri Taraf Na Dekho</td><td>duet</td><td>79.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Likha Hai Teri Aankhon Mein</td><td>duet</td><td>79.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Hoon Na</td><td>duet</td><td>79.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Sang Yaara</td><td>male</td><td>78.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaaiye Aap Kaha Jayenge</td><td>female</td><td>78.00</td><td>9</td><td>1</td><td>2026-05-31 17:04:49</td>
+        </tr>
+        <tr><td>Theheriye Hosh Mein Aa Loon</td><td>duet</td><td>78.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saans</td><td>duet</td><td>77.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaaun Kahaan Bata E Dil</td><td>male</td><td>77.00</td><td>10</td><td>1</td><td>2026-08-06 15:48:54</td>
+        </tr>
+        <tr><td>Naina Barse Rim Jhim</td><td>female</td><td>77.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maana Ke Hum Yaar Nahin</td><td>duet</td><td>77.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaj Mausam Bada</td><td>male</td><td>76.75</td><td>9</td><td>1</td><td>2026-09-20 16:33:35</td>
+        </tr>
+        <tr><td>Jawaaniyan Yeh Mast Mast Bin Piye</td><td>male</td><td>76.50</td><td>9</td><td>1</td><td>2026-03-19 16:23:18</td>
+        </tr>
+        <tr><td>Mera Dil Ye Pukare</td><td>duet</td><td>76.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aa Chal Ke Tujhe</td><td>male</td><td>76.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aankhon Mein Kya Ji</td><td>duet</td><td>75.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hotel California</td><td>male</td><td>74.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Pyaar Ka Saagar Hai</td><td>male</td><td>74.00</td><td>10</td><td>1</td><td>2026-02-19 16:23:13</td>
+        </tr>
+        <tr><td>Yaad Na Jaaye Beete Dino Ki</td><td>male</td><td>74.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mera Naam Chin Chin Chu</td><td>female</td><td>74.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Khwaab Ho Tum Ya Koi Haqeeqat</td><td>duet</td><td>73.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dekho Dekho Jaanam Hum</td><td>duet</td><td>73.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gir Gaya Jhumka</td><td>duet</td><td>73.00</td><td>10</td><td>1</td><td>2026-01-15 03:11:56</td>
+        </tr>
+        <tr><td>Duniya Mein Logon Ko</td><td>duet</td><td>73.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhoti Chhoti Raatein</td><td>duet</td><td>72.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Mehboob Tujhe</td><td>male</td><td>72.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baharon Phool Barsao</td><td>male</td><td>71.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Mujhe Yun</td><td>duet</td><td>71.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Khwabon Mein Jo Aaye</td><td>female</td><td>70.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chogada Tara</td><td>duet</td><td>70.00</td><td>10</td><td>1</td><td>2025-09-20 16:21:43</td>
+        </tr>
+        <tr><td>Chandni O Meri Chandni</td><td>duet</td><td>70.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chitthi Na Koi Sandesh</td><td>female</td><td>70.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Re Ab Mera Dil Pukara</td><td>duet</td><td>70.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaho Na Kaho</td><td>male</td><td>69.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Thode Badmaash</td><td>female</td><td>69.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kabhi Kisiko Mukammal Jahaan Nahi</td><td>male</td><td>69.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tumne Mujhe Dekha</td><td>duet</td><td>68.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dekha Jo Tumko</td><td>duet</td><td>68.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tadpaoge Tadpa Lo</td><td>female</td><td>67.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chalo Tumko Lekar Chalein</td><td>duet</td><td>67.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>I Just Called To Say I Love You</td><td>male</td><td>67.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Piya Tu Ab To Aaja</td><td>duet</td><td>67.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kesariya</td><td>duet</td><td>66.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Pal Do Pal Ka Shayar Hoon</td><td>male</td><td>66.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Nakhrewaali</td><td>male</td><td>66.00</td><td>10</td><td>1</td><td>2026-06-06 15:37:39</td>
+        </tr>
+        <tr><td>Let Me Down Slowly X Zara Zara</td><td>duet</td><td>66.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dilliwali Girlfriend</td><td>duet</td><td>65.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Ladki Ko Dekha To Aisa Laga</td><td>male</td><td>64.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Pyari Pyari Soorat Ko</td><td>male</td><td>64.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Thodi Der Aur Thehar Ja</td><td>duet</td><td>64.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Qayamat Qayamat</td><td>duet</td><td>64.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Tujhko Pukare Mere Geet Re</td><td>male</td><td>63.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Humne Dekhi Hai In Aankhon Mein</td><td>duet</td><td>63.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Deewani Mastani</td><td>duet</td><td>63.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Ka Pehla Khat</td><td>male</td><td>63.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Na Jaane Kis Jahaan Mein Kho Gaye</td><td>duet</td><td>63.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Mera Prem Patra Padh Kar</td><td>male</td><td>62.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raat Shabnami</td><td>female</td><td>62.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hamesha Tumko Chaaha</td><td>duet</td><td>62.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maine Payal Hai Chhankai</td><td>female</td><td>62.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pal Bhar Ke Liye</td><td>male</td><td>62.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Nahin Ji Nahin</td><td>duet</td><td>62.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaisi Paheli Zindagani</td><td>female</td><td>61.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Itna To Yaad Hai Mujhe</td><td>duet</td><td>61.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Jo Mere Sur Mein</td><td>duet</td><td>61.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Palanhare</td><td>female</td><td>61.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baar Baar Dekho</td><td>male</td><td>61.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ruk Jaana Nahin</td><td>male</td><td>61.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhupa Lo Yun Dil Mein</td><td>duet</td><td>60.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kyun Main Jaagoon</td><td>male</td><td>60.00</td><td>10</td><td>1</td><td>2026-01-24 15:26:40</td>
+        </tr>
+        <tr><td>Badtameez Dil</td><td>duet</td><td>60.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bas Ek Dhadak</td><td>duet</td><td>60.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>My Dil Goes Mmmm</td><td>duet</td><td>59.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Na Yeh Chaand Hoga</td><td>female</td><td>59.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gori Tera Gaon Bada Pyara</td><td>male</td><td>59.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kya Dekhte Ho</td><td>duet</td><td>58.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ajab Si</td><td>male</td><td>58.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tadbir Se Bigadi Hui Taqdir Bana Le</td><td>female</td><td>57.50</td><td>10</td><td>1</td><td>2026-10-10 15:16:23</td>
+        </tr>
+        <tr><td>Jiya Beqarar Hai</td><td>female</td><td>57.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Pyaar Tu Preet</td><td>duet</td><td>57.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ruk Ja Raat Theher</td><td>female</td><td>56.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Raat Aur Ye Doori</td><td>duet</td><td>56.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Meri Zohra Jabeen</td><td>male</td><td>56.25</td><td>9</td><td>1</td><td>2026-03-03 17:31:25</td>
+        </tr>
+        <tr><td>Laila O Laila</td><td>duet</td><td>56.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jhumka Gira Re</td><td>female</td><td>56.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mera Joota Hai Japani</td><td>male</td><td>55.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh To Sach Hai Ki Bhagwan Hai</td><td>duet</td><td>55.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saanwali Saloni Teri</td><td>duet</td><td>55.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jhanjhariya</td><td>duet</td><td>54.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>In Aankhon Ki Masti</td><td>female</td><td>54.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dagabaaz Re</td><td>male</td><td>54.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pal Bhar Mein Yeh Kya Ho Gaya</td><td>female</td><td>53.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lakdi Ki Kaathi</td><td>duet</td><td>53.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saiyaara Title Song</td><td>male</td><td>53.00</td><td>10</td><td>1</td><td>2025-08-13 16:19:36</td>
+        </tr>
+        <tr><td>Do Pyaar Karne Wale</td><td>duet</td><td>53.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Oh My Darling What To Do</td><td>duet</td><td>53.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Only Time</td><td>female</td><td>53.00</td><td>10</td><td>1</td><td>2026-02-10 18:17:11</td>
+        </tr>
+        <tr><td>Crazy Kiya Re</td><td>female</td><td>52.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Akele Akele Kaha Jaa Rahe Ho</td><td>male</td><td>52.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bahut Shukriya Badi Meherbaani</td><td>duet</td><td>51.50</td><td>9</td><td>1</td><td>2024-11-29 08:12:49</td>
+        </tr>
+        <tr><td>Gila Gila Dil Gila</td><td>duet</td><td>51.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Deewana Mujhsa Nahin</td><td>male</td><td>51.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>San Sanana</td><td>female</td><td>51.00</td><td>10</td><td>1</td><td>2026-10-10 15:30:32</td>
+        </tr>
+        <tr><td>Jab Jab Bahaar Aayi</td><td>female</td><td>50.50</td><td>10</td><td>1</td><td>2026-08-28 15:58:01</td>
+        </tr>
+        <tr><td>Chikni Chameli</td><td>female</td><td>50.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaha Teri Yeh Nazar Hai</td><td>male</td><td>50.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sharara Sharara</td><td>duet</td><td>50.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Je Hum Tum Chori Se</td><td>duet</td><td>50.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hasta Hua Noorani Chehra</td><td>duet</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sar Jo Tera Chakraaye</td><td>male</td><td>49.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sitaare Ikkis</td><td>male</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gore Gore O Baanke Chhore</td><td>duet</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gore Gore Mukhde Pe</td><td>duet</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aawaara Bhanware</td><td>female</td><td>49.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aa Laut Ke Aaja Mere Meet</td><td>male</td><td>49.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kya Kehna</td><td>duet</td><td>49.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Mere Shaahe Khubaan</td><td>male</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Maria O Maria</td><td>duet</td><td>49.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Muqala Muqabla</td><td>duet</td><td>49.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Edelweiss</td><td>male</td><td>48.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Mujhse Jo Kiya Tumne</td><td>male</td><td>48.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bikhara Ke Zulfein</td><td>duet</td><td>48.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Badi Sooni Sooni Hai</td><td>male</td><td>48.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kissa Hum Likhenge</td><td>duet</td><td>47.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mujhse Juda Hokar</td><td>duet</td><td>47.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum To Pyaar Ho Sajna</td><td>duet</td><td>47.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaand Aahen Bharega</td><td>male</td><td>47.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Naina</td><td>male</td><td>47.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Lo Main Haari Piya</td><td>female</td><td>46.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gawaah Hain Chaand Taare</td><td>duet</td><td>46.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hey Shona</td><td>duet</td><td>46.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Baby Dont Break My Heart</td><td>duet</td><td>46.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Wonderful Tonight</td><td>male</td><td>46.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Love Hua Ab Ye Na Pucho</td><td>duet</td><td>45.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ka Jo Haal Hai</td><td>duet</td><td>45.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Groovy Kind Of Love</td><td>male</td><td>44.25</td><td>9</td><td>1</td><td>2026-02-07 16:14:18</td>
+        </tr>
+        <tr><td>Chaand Taare Tod Laun</td><td>male</td><td>44.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Paayaliya Ho Ho Ho Ho</td><td>duet</td><td>44.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rimjhim Ke Geet Sawan Gaye</td><td>duet</td><td>44.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaage Jaage Armaan Hai</td><td>duet</td><td>44.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mujhse Mohabbat Ka Izhaar</td><td>duet</td><td>44.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chal Kahin Door Nikal Jaayen</td><td>duet</td><td>44.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar To Hona Hi Tha</td><td>duet</td><td>43.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>1234 Get On The Dance Floor</td><td>duet</td><td>43.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tumhari Nazar Kyun Khafa Ho Gayi</td><td>duet</td><td>43.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Jo Chale Gaye</td><td>duet</td><td>43.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maiyya Yashoda</td><td>female</td><td>43.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaanam Samjha Karo</td><td>duet</td><td>43.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sun Beliya Shukriya Meharbani</td><td>duet</td><td>43.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Jawaani Hai Deewaani</td><td>male</td><td>43.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Yahaan Aaye Kis Liye</td><td>duet</td><td>43.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>La Isla Bonita</td><td>female</td><td>42.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ude Udan Khatole</td><td>duet</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Thoda Thoda Pyaar Hua Tumse</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bekarar Dil Tu Gaaye Ja</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kishore Kumar Medley 15 Songs</td><td>duet</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaand Jaane Kahan Kho Gaya</td><td>duet</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Right Here Waiting</td><td>male</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kuch Tum Socho</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Daiya Daiya Daiya Re</td><td>female</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Is Pyar Se Meri Taraf Na</td><td>duet</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ibaadat</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Dooriyan</td><td>male</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chup Tum Raho Chup Hum Rahein</td><td>duet</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lift Kara De</td><td>male</td><td>42.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dhun Saiyaara</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tujhko Na Dekhun To</td><td>duet</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Boom Boom Aaj Ki Raat Raat Baaki</td><td>female</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jeevan Ke Din</td><td>male</td><td>42.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Reshmi Zulfein</td><td>male</td><td>41.50</td><td>9</td><td>1</td><td>2025-06-21 08:04:32</td>
+        </tr>
+        <tr><td>Bindiya Chamkegi</td><td>female</td><td>41.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Meri Chunar Udd Udd Jaaye</td><td>female</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aate Aate Aa Gaye Paas Hum</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ab Chaahe Ma Roothe Ya Baba</td><td>duet</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Antakshari Maine Pyar Kiya</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bhaage Re Mann Kahin</td><td>female</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaahe Koi Mujhe Junglee Kahe</td><td>male</td><td>41.00</td><td>10</td><td>1</td><td>2026-05-18 15:22:21</td>
+        </tr>
+        <tr><td>Dekha Hai Teri Aankhon Ko</td><td>male</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Do Lafzon Mein</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Indhana Winva</td><td>female</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jhonka Hawa Ka</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Khamoshiyaan Medley</td><td>male</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kuch To Hai</td><td>male</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mehbooba Mehbooba Mehbooba</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Meri Soni Mere</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sa Re Ga Ma Pa</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Shehar Ki Pariyon</td><td>duet</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Socho Ke Jheelon Ka</td><td>duet</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Take My Breath Away</td><td>female</td><td>41.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Hi Meri Shab Hai</td><td>male</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yaad Mein Teri Jaag Jaag</td><td>duet</td><td>41.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jiya O Jiya O Jiya</td><td>male</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tujhe Sochta Hu</td><td>male</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raabta</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaan E Jaan</td><td>duet</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Khat Navjot Ahuja</td><td>male</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum To Aise Hain Bhaiya</td><td>female</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Salaamat</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Ho Gaye Aap Ke</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Har Kisi Ke Dil Mein Ek Ladki</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baap Ki Kasam Maa Ki Kasam</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gustakh Dil Tere Liye</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gujarati Aashiqui Song</td><td>duet</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baatein Ye Kabhi Na Baatein</td><td>male</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Naina Banjaare</td><td>male</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Suno Na Jhankaar Beats</td><td>male</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Banjaara</td><td>male</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aa Raat Bhar</td><td>duet</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum To Dhokebaaz Ho</td><td>duet</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chanda Re x Roja</td><td>male</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sun Sun Sun Didi Tere Liye</td><td>female</td><td>40.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tera Zikr</td><td>male</td><td>40.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Do Teen</td><td>female</td><td>39.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mohabbat Kar Lo Jee Bhar Lo</td><td>duet</td><td>39.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ke Jharoke Mein</td><td>duet</td><td>37.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bhanwara Bada Naadaan</td><td>female</td><td>37.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aansu Bhari Hai</td><td>male</td><td>37.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Hai Bombay Meri Jaan</td><td>duet</td><td>36.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dukhi Man Mere</td><td>male</td><td>36.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Nahin Yeh Ho Nahin Sakta</td><td>duet</td><td>35.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Say You Say Me</td><td>male</td><td>35.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhalke Teri Aankhon Se</td><td>male</td><td>34.25</td><td>9</td><td>1</td><td>2025-03-30 07:32:30</td>
+        </tr>
+        <tr><td>Yeh Aankhen Uff Yumma</td><td>duet</td><td>34.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dukki Pe Dukki Ho</td><td>duet</td><td>33.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaun Tujhe x Kuch To Hai Mashup</td><td>male</td><td>33.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhedo Na Meri Zulfen</td><td>duet</td><td>33.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Mere Vatan Ke Logon</td><td>duet</td><td>32.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mast Baharon Ka Main Aashiq</td><td>male</td><td>32.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaisi Hai Ye Rut</td><td>male</td><td>32.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Dil Laya Hai Bahaar</td><td>duet</td><td>32.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Tune Kya Kiya</td><td>duet</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Aaye To Khayal E Dil</td><td>male</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Nazar Mein Bhi</td><td>duet</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Sur Aur Mere Geet</td><td>female</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Mera Churaya Kyun</td><td>duet</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Roka Kai Baar Maine</td><td>duet</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>I Still Havent Found What Im Looking For</td><td>male</td><td>31.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Right Here Right Now</td><td>duet</td><td>31.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>An Evening In Paris</td><td>duet</td><td>30.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaja Piya Tohe Pyaar Doon</td><td>duet</td><td>30.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Meri Bheegi Bheegi Si + Tum Bin</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Hi Kyun</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Love You Zindagi</td><td>female</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Latthay Di Chaadar</td><td>female</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Mr Benjo Ishara To Samjho</td><td>duet</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaali Palak Teri Gori</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Janam Janam Janam</td><td>duet</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jag Ghoomeya</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raja Ne Rani</td><td>duet</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rang Rang Mere</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Is Dil Mein Kya Hai</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ruk Ja O Jaane Waale Ruk Ja</td><td>male</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saathiyan Badmash Dil</td><td>female</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Humne To Dil Ko Aap Ke Qadamon Pe</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saawan Me Morni Ban Ke</td><td>female</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Have You Ever Seen The Rain</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ghar Kab Aaoge</td><td>male</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Feliz Navidad</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Baar Dekh Lijiye</td><td>female</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Mere Tu Deewana Hai</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Mein Kya Hai</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Chaahta Hai</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tu Jahaan Main Wahaan</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhoti Si Yeh Duniya</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chhamma Chhamma</td><td>duet</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Carrie</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Waqt Karta Jo Wafa</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Dil Tum Bin x Lag Jaa Gale</td><td>duet</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mhare Hiwda Mein Nache Mor</td><td>duet</td><td>30.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mujhe Darde Dil Ka</td><td>male</td><td>30.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Na Jhatko Zulf Se Paani</td><td>male</td><td>29.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Haule Haule</td><td>male</td><td>29.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Bhar Nahi Bhoolegi</td><td>male</td><td>29.25</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Deke Dekho</td><td>male</td><td>28.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum The Jinke Sahaare</td><td>female</td><td>28.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kore Kore Sapne Mere</td><td>male</td><td>27.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sar Pe Topi Laal</td><td>duet</td><td>27.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Donna</td><td>male</td><td>26.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dholna</td><td>duet</td><td>26.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Thandi Hawa Kaali Ghata</td><td>female</td><td>26.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baar Baar Tohe Kya Samjhaye</td><td>duet</td><td>26.00</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aa Mere Humjoli Aa</td><td>duet</td><td>25.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Duniya Mein Jeene Se</td><td>male</td><td>24.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Waah Waah Ramji</td><td>duet</td><td>24.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Dholna 30</td><td>female</td><td>24.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aawaara Hoon</td><td>male</td><td>23.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chandaniya Lori</td><td>female</td><td>23.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Jo Chalne Lage</td><td>male</td><td>23.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ae Watan Tere Liye</td><td>duet</td><td>23.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Character Dheela Hai</td><td>duet</td><td>23.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ina Mina Dika Eena Mina Deeka</td><td>female</td><td>23.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Ke Dhaage</td><td>duet</td><td>23.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Dil Mein Tu Hi Tu Hai</td><td>duet</td><td>23.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ay Hairathe</td><td>duet</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chale The Saath Milkar</td><td>male</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rut Hai Milan Ki Sathi Mere Aa Re</td><td>duet</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Naam Ada Likhna</td><td>duet</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mann Re Tu Kaahe Na Dheer Dhare</td><td>male</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Laakhon Hain Yahaan Dilwale</td><td>male</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kya Mausam Hai</td><td>duet</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Tujhse Mohabbat Karke Sanam</td><td>male</td><td>22.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Tera Deewana Hai Sanam</td><td>duet</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ne Tumko Chun Liya Hai</td><td>male</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sajna Ve Sajna</td><td>duet</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maar Dala</td><td>female</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jeevan Ki Bagiya Mehkegi</td><td>duet</td><td>22.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Mein Jo Baat Hai</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>6 In 1 Romantic Medley</td><td>duet</td><td>21.50</td><td>10</td><td>1</td><td>2025-10-10 16:00:05</td>
+        </tr>
+        <tr><td>Woh Chali Woh Chali</td><td>male</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Thandi Hawaayen Lehrake Aaye</td><td>female</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kya Kare Kya Na Kare</td><td>male</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aasman Ke Neeche</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bahut Pehle Se Un Kadmon Ki Aahat</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>I Will Always Love You</td><td>female</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dum Dum Dum Mast Hai</td><td>duet</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Aur Tum Tum Aur Hum</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Piya Piya Piya Mora Jiya Pukare</td><td>duet</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mauja Hi Mauja</td><td>male</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tumhe Yaad Karte Karte</td><td>female</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Koi Ladki Mujhe Kal Raat</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mitwa</td><td>male</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>I Love You Bol Daal</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Deewane Hain Deewane Ko Na Ghar</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Everything I Do</td><td>male</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ka Khilona Hai Toot Gaya</td><td>female</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Golden Duets Medley 1</td><td>duet</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Churaale</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dhalti Jaaye Raat</td><td>duet</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Parbaton Ke Daayere</td><td>duet</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aaya Mausam Dosti Ka</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Soni Soni Akhiyon Wali</td><td>duet</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lut Gaye Dil Ibadat</td><td>male</td><td>21.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Humne Tujhko Pyaar Kiya Hai Jitna</td><td>male</td><td>21.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aati Rahengi Bahaarein</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaand Baaliyan</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tum Se Hi + Kaun Tujhe</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saranga Teri Yaad Mein</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Music Aaj Ki Raat</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Boojh Mera Kya Naam Re</td><td>female</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saregama Carvaan Medley</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Waada Tera Waada</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Aapke Hain Kaun Medley</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Benaam Si Khwaahishein</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zulfon Ko Hata Le Chehre Se</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yaaron</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hit Songs Of 90s Bollywood Mashup</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Yaara Tere Gham</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Seene Mein Sulagate Hain Armaan</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Hawa Yeh Nadi Ka Kinara</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Are Na Na Na Na Tauba Tauba</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lag Ja Gale + Abhi Na Jao</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaadu Bhari Aankon</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Amar Akbar Anthony</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lata Mangeshkar Duets Medley</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Perhaps, Perhaps, Perhaps</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kheech Meri Photo</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kabhi Khud Pe Kabhi Haalaat Pe</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sitaron Ki Mehfil</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jo Daastaan Humne Apni Sunayi</td><td>female</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>In Hawaaon Mein In Fizaaon Mein</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaane Kyun Main Tujhko Din Raat</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sun Ja Aa Thandi Hawa</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Koi Kahe Kehta Rahe</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saajanji Ghar Aaye</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Om Jai Jagdish Hare</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aap Yuhi Agar Humse Milte Rahe</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lean On Me</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Mein Tum Mile</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Dooje Ke Vaaste</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aapka Kya Hoga</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Maahi Dunki</td><td>male</td><td>20.50</td><td>10</td><td>1</td><td>2025-03-03 07:29:44</td>
+        </tr>
+        <tr><td>Saathiya Nahin Jaana</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Paas Aake Mera Waqt</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Maar Daala</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaar Kadam Bas</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Dil Dil Deewana</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Mar Jaayenge</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Ban Gaye Ho Tum</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Gaaun Tum So Jaao</td><td>male</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dhadkane Saanse Jawaani</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sahab Didi Medley</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chor Bazari</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Main Tere Ishq Mein</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Humko Tumse Ho Gaya Hai Pyaar</td><td>duet</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mann Dole Mera Tan Dole</td><td>female</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rafi Sahab Medley</td><td>male</td><td>20.50</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chal Chameli Baag Mein</td><td>duet</td><td>20.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pardesiyon Se Na Akhiyan Milaana</td><td>male</td><td>18.25</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Behti Hawa Sa Tha Woh</td><td>duet</td><td>16.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kitna Haseen Hai Mausam</td><td>duet</td><td>16.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kaali Ghata Chhaye</td><td>female</td><td>16.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kabhi Khamosh Baithoge</td><td>male</td><td>15.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Fitoor</td><td>duet</td><td>15.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Udi</td><td>duet</td><td>14.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Soja Mere Chanda</td><td>female</td><td>14.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaudhvi Shab</td><td>female</td><td>14.00</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jab Jab Bahaar Aayee</td><td>female</td><td>13.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pyaar Hua Hai Jabse</td><td>duet</td><td>12.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Baharon Mera Jeevan Bhi</td><td>female</td><td>12.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jo Ho Yaar Apna</td><td>duet</td><td>12.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Deewano Se Yeh Mat Puchho</td><td>male</td><td>12.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Masoom Dil Hai Mera</td><td>female</td><td>12.50</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Soch Na Sake / Sab Tera</td><td>duet</td><td>11.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Trouble Me</td><td>female</td><td>11.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ja Ja Ja Ja Bewafa</td><td>female</td><td>11.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Sab Kuch Seekha Humne</td><td>male</td><td>11.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jab Bhi Jee</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaane Kahan Mera X Hai Apna Dil</td><td>unknown</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jaag Dil-E-Deewana</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Rain Song Medley</td><td>unknown</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Itna Hain Tumse Pyaar Mujhe</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kuch Kehta Hai Ye Saavan</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Is Tarah Aashiqui Ka Asar</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ishq Jaisa Kuch</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>ABCD Hum Saath Saath Hain</td><td>duet</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>In Lamhon Ke Daaman Mein</td><td>duet</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ruk Jaao Na Ji Aisi Kya Jaldi</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>In Dino</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Saiyaan Hatto Jaao</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kya Khabar Kya Pata</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Hum Aur Tum Ab Nahi Paraaye</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Ri Chiraiya</td><td>male</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Medley Of Amitabh Bachhan Songs</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ooh La La</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Gori Tera Gaaon Bada Pyara</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Zindagi Ki Na Toote Ladi</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ghoomar</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Shaam Mastani + Raat Kali</td><td>male</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ghadi Ghadi Mora Dil Dhadke</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>O Nigaahe Mastaana</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Geet Gaata Hoon Main</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ek Mahal Ma Chham Chham Karti</td><td>duet</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Oh My Darling Clementine</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Lukka Chuppi</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dola Dola Man Dola</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Yeh Kehta Hai</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tere Liye Palkon Ki Jhaalar</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ne Dil Ko Pukaara</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Teri Shehnai Bole</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Dil Ka Rishta</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Tik Tik Tik Mera Dil</td><td>duet</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aankhon Pe Mohabbat Likhde</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chudi Nahin Ye Mera Dil Hai</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chitthi Aayi Hai</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mere Naseeb Mein Ae Dost</td><td>male</td><td>10.75</td><td>10</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mainu Vida Karo</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chanda Re x Vennilave</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chana Jor Garam</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaand Chura Ke Laaya Hun</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Chaahe Paas Ho Chaahe Door Ho</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>CAT Cat Cat Maane Billi</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Mohe Panghat Pe Nandlal</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bolo Bolo Kuch To Bolo</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bhooli Hui Yaadon</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Milti Hai Zindagi Mein Mohabbat</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Bane Chahe Dushman</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yaaron Dosti Badi Hi Haseen Hai</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Medley 3 Songs</td><td>unknown</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Athara Baras Ki Tu Hone Ko Aai Re</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Medley Of 6 Legends</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ari Chhod De Patang</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Hum Aa Gaye Hai Kahaan</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Aplam Chaplam</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Medley Of 90s</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Yeh Khamoshiyan Yeh Tanhaiyan</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Pehla Prem Ni Pehli E Najar</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Agar Saaz Cheda Taraane Banenge</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kisi Baat Par Main Kisi Se Khafa</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Kisi Na Kisi Se Kabhi Na Kabhi</td><td>male</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Ja Ja Ja Mere Bachpan</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Muskaanein Jhooti Hai</td><td>female</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Raat Akeli Thi</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+        <tr><td>Jab Dil Mile</td><td>duet</td><td>10.75</td><td>9</td><td>0</td><td>None</td>
+        </tr>
+    </tbody>
+  </table>
+
+      </div>
+    </section>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="/static/highlight.min.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
